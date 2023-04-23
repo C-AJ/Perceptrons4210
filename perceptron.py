@@ -1,9 +1,9 @@
 #-------------------------------------------------------------------------
-# AUTHOR: your name
-# FILENAME: title of the source file
-# SPECIFICATION: description of the program
+# AUTHOR: Austin Celestino
+# FILENAME: perceptron.py
+# SPECIFICATION: Compares accuracies of Perceptron vs MLPClassifier
 # FOR: CS 4210- Assignment #4
-# TIME SPENT: how long it took you to complete the assignment
+# TIME SPENT: 1 hour 30 minutes
 #-----------------------------------------------------------*/
 
 #IMPORTANT NOTE: YOU HAVE TO WORK WITH THE PYTHON LIBRARIES numpy AND pandas to complete this code.
@@ -21,6 +21,9 @@ df = pd.read_csv('optdigits.tra', sep=',', header=None) #reading the data by usi
 
 X_training = np.array(df.values)[:,:64] #getting the first 64 fields to form the feature data for training
 y_training = np.array(df.values)[:,-1]  #getting the last field to form the class label for training
+
+#print(X_training[0])
+#print(y_training[0])
 
 df = pd.read_csv('optdigits.tes', sep=',', header=None) #reading the data by using Pandas library
 
@@ -79,7 +82,7 @@ for i in n: #iterates over n
             else:
                 if runAccuracy > MLPaccuracy:
                     MLPaccuracy = runAccuracy
-                    print("Highest MLP accuracy so far: " + str(Paccuracy) + " learning rate=" + str(i) +
+                    print("Highest MLP accuracy so far: " + str(MLPaccuracy) + " learning rate=" + str(i) +
                           " shuffle=" + str(j))
 
 
